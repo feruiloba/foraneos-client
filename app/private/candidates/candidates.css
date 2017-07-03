@@ -1,0 +1,66 @@
+.scrollable{
+    overflow-y: scroll;
+    height: 430px;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.alert-link{
+    border-color: floralwhite;
+    background-color: rgba(255,255,255,0.2);
+}
+
+a{
+    color: floralwhite;
+}
+
+table>tbody>tr {
+    border: solid 1px floralwhite;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color: #224f48;
+}
+
+.sortorder:after {
+    color: #ffffff;
+    content: '\25b2';
+}
+
+.sortorder.reverse:after {
+    color: #ffffff;
+    content: '\25bc';
+}
+
+.red{
+    color: red;
+}
+
+.red:hover{
+    color: #224f48;
+}
+
+.yellow{
+    color: gold;
+}
+
+.yellow:hover{
+    color: #224f48;
+}
+
+.green{
+    color: forestgreen;
+}
+
+.green:hover{
+    color: #224f48;
+}

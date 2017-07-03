@@ -1,0 +1,47 @@
+<div ng-controller="CandidatesCtrl">
+
+    <table style="width: 100%">
+        <thead>
+            <tr>
+                <th style="width: 5%;">
+                    <div class="checkbox abc-checkbox abc-checkbox-primary" style="display: inline">
+                        <input class="styled" type="checkbox" ng-model="all">
+                        <label></label>
+                    </div>
+                </th>
+                <th style="width: 15%" >
+                    <a  href="" ng-click="sortBy('cu')"><b>Clave única</b></a>
+                    <span class="sortorder" ng-show="propertyName === 'cu'" ng-class="{reverse: reverse}"></span>
+                </th>
+                <th style="width: 70%;">
+                    <a href="" ng-click="sortBy('name')"><b>Nombre</b></a>
+                    <span class="sortorder" ng-show="propertyName === 'name'" ng-class="{reverse: reverse}"></span>
+                </th>
+                <th style="width: 10%">
+                    <a href="" ng-click="sortBy('date')"><b>Fecha</b></a>
+                    <span class="sortorder" ng-show="propertyName === 'date'" ng-class="{reverse: reverse}"></span>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="scrollable">
+            <tr ng-repeat="sol in solicitudes | filter: searchbox | orderBy:propertyName:reverse">
+                <td>
+                    <div class="checkbox abc-checkbox abc-checkbox-primary" style="display: inline">
+                        <input class="styled" type="checkbox" ng-model="ch">
+                        <label></label>
+                    </div>
+                </td>
+                <td>
+                    <p style="display: inline">{{sol.cu}}</p>
+                </td>
+                <td>
+                    <a><b>{{sol.name}}</b></a>
+                </td>
+                <td>
+                    <p>{{sol.date}}</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

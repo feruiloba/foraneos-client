@@ -1,0 +1,59 @@
+.form-group.first{
+    padding-top: 10px;
+}
+.form-group.last{
+    padding-bottom: 10px;
+}
+.form-control{
+    height: 35px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.createaccount{
+    text-align: center;
+    color: #ffffff;
+    font-size: x-large;
+}
+
+.typeahead-demo .custom-popup-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    background-color: #f9f9f9;
+}
+
+.typeahead-demo .custom-popup-wrapper > .message {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    color: #868686;
+}
+
+.typeahead-demo .custom-popup-wrapper > .dropdown-menu {
+    position: static;
+    float: none;
+    display: block;
+    min-width: 160px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.help-block{
+    color:white;
+}
+
+.form-column3{
+    width: 97px;
+    display:inline
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

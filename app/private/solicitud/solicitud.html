@@ -1,0 +1,125 @@
+<div ng-controller="SolicitudCtrl">
+
+    <div>
+        <a ng-click="openNewSol()">
+            <h3 class="nuevo"><i class="glyphicon glyphicon-plus-sign"></i></h3>
+            <h5 class="nuevo">  Nueva solicitud</h5>
+        </a>
+    </div>
+
+    <form class="add-window" ng-show="nuevasol==true">
+
+        <div class='header'>Nueva solicitud
+            <a ng-click="closeNewSol()" style="font-size: large">&times;</a>
+            <a>&#128470;</a>
+            <a>&#128469;</a>
+            <button ng-click="closeNewSol()">Cerrar</button>
+        </div>
+
+        <div class="inner scrollable">
+
+            <label>¿Tienes alguna ayuda financiera?</label><br>
+            <ul class="list-unstyled radio" style="display: inline;">
+                <li class="radio-inline list-group">
+                    <label><input class="list-group-item" type="radio" ng-model="ayuda" value="prestamo">Préstamo</label>
+                </li>
+                <li class="radio-inline list-group">
+                    <label><input class="list-group-item" type="radio" ng-model="ayuda" value="beca">Beca</label>
+                </li>
+                <li class="radio-inline list-group">
+                    <label><input class="list-group-item" type="radio" ng-model="ayuda" value="nada">Nada</label>
+                </li>
+            </ul>
+
+            <div class="form-group container-fluid typeahead-demo" style="display:inline" ng-show="(ayuda=='prestamo'||ayuda=='beca')">
+                <input name="porcentaje"
+                       class="form-control form-column"
+                       ng-model="solicitud.porcentaje"
+                       type="number"
+                       uib-typeahead="p.text for p in porcentajes | limitTo:4"
+                       placeholder="%">
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <textarea class="form-control" placeholder="¿Tienes algún otro tipo de apoyo?, Si sí, ¿cuánto?" rows="4" cols="50"></textarea>
+                </label>
+            </div>
+
+            ¿Trabajas?
+            <ul class="list-unstyled radio">
+                <li class="radio-inline list-group">
+                    <label><input class="list-group-item" type="radio" ng-model="trabaja" value="'si'">Si</label>
+                </li>
+                <li class="radio-inline list-group">
+                    <label><input class="list-group-item" type="radio" ng-model="trabaja" value="'no'">No</label>
+                </li>
+            </ul>
+
+            <div class="form-group">
+                <input class="form-control" type="number" placeholder="Ingreso mensual">
+            </div>
+
+            Gastos
+            <div class="form-group">
+                <input class="form-control" type="number" placeholder="Renta">
+            </div>
+
+            Si tu renta no incluye los servicios, por favor especifica los siguientes gastos (mensuales)
+            <div class="form-group">
+                <input class="form-control" type="number" placeholder="Teléfono/Internet">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" type="number" placeholder="Luz">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" type="number" placeholder="Gas">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" type="number" placeholder="Agua">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" type="number" placeholder="Supermercado">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" type="number" placeholder="Otros gastos">
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox">¿Has recibido algún apoyo de AEF anteriormente?
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Si<input type="radio">
+                </label>
+                <label>
+                    No<input type="radio">
+                </label>
+                (alto75% medio50% bajo25% ddl) input especificar comidas
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="number">
+                </label>
+            </div>
+
+        </div>
+        <hr>
+        <div class="form-group">
+            <button class="btn btn-default form-control cancelar">Cancelar</button>
+            <button class="btn btn-info form-control guardar" type="submit">Guardar</button>
+        </div>
+        <br>
+
+    </form>
+
+</div>

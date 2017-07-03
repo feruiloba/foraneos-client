@@ -1,0 +1,42 @@
+.container{
+    width: 400px;
+    height: 620px;
+    text-align: center;
+    background-color: rgba(52, 73, 94, 0.9);
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.container img{
+    border-radius: 30px;
+    width: 180px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.noaccount{
+    display: inline-block;
+    color: #ffffff;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+a:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color: #5bc0de;
+}
+
+.forgotpassword{
+    display: block;
+    font-size: small;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.terms{
+    display: inline-block;
+    font-size: xx-small;
+}

@@ -1,0 +1,108 @@
+<div class="container" ng-controller="RegisterCtrl">
+
+    <form name="registerForm" ng-submit="siguiente()">
+
+        <div class="form-group first">
+            <span class="createaccount">Información personal</span>
+        </div>
+
+        <div class="form-group" show-errors>
+            <input name="first_name" class="form-control" ng-model="userData.nombre" type="text" placeholder="Nombre" required>
+        </div>
+
+        <!--Checar uib-typeahead para que adivine su chain-->
+        <div class="form-group" show-errors>
+            <input name="last_name" class="form-control" ng-model="userData.apellido" type="text" placeholder="Apellidos" required>
+        </div>
+
+        <div class="help-block">
+            <label>Fecha de nacimiento</label>
+        </div>
+
+        <div class="form-group container-fluid typeahead-demo" show-errors>
+            <input name="day"
+                   class="form-control form-column3"
+                   ng-model="userData.fecha_nac"
+                   type="number"
+                   uib-typeahead="day for day in days| filter:$viewValue | limitTo:8"
+                   placeholder="dd"
+                   required>
+            <input name="month"
+                   class="form-control form-column3"
+                   ng-model="userData.month_birth"
+                   type="text"
+                   uib-typeahead="month for month in months| filter:$viewValue | limitTo:8"
+                   placeholder="mes"
+                   required>
+            <input name="year"
+                   class="form-control form-column3"
+                   ng-model="userData.year_birth"
+                   type="number"
+                   uib-typeahead="year for year in years| filter:$viewValue | limitTo:8"
+                   placeholder="aaaa"
+                   required>
+        </div>
+
+        <div class="form-group help-block">
+            <label>Lugar de origen</label>
+        </div>
+
+        <div class="form-group container-fluid typeahead-demo" show-errors>
+            <input name="estado"
+                   class="form-control form-column2"
+                   ng-model="userData.estado_origen"
+                   type="text"
+                   uib-typeahead="lugar.estado for lugar in lugares| filter:$viewValue | limitTo:8"
+                   typeahead-on-select="seleccionaCiudades($item.ciudades)"
+                   placeholder="Estado"
+                   required>
+            <input name="ciudad"
+                   class="form-control form-column2"
+                   ng-model="userData.ciudad_origen"
+                   type="text"
+                   uib-typeahead="ciudad for ciudad in ciudades | filter:$viewValue | orderBy | limitTo:8"
+                   placeholder="Ciudad"
+                   required>
+        </div>
+
+        <div class="form-group" show-errors>
+            <input name="phone" class="form-control" ng-model="userData.phone" type="number" placeholder="Celular" required>
+        </div>
+
+        <div class="form-group" show-errors>
+            <input name="mail" class="form-control" ng-model="userData.mail" type="email" placeholder="Email" required>
+        </div>
+
+        <div class="form-group" show-errors>
+            <input name="pass"
+                   class="form-control"
+                   ng-model="userData.pass"
+                   type="password"
+                   placeholder="Contraseña"
+                   minlength="6"
+                   required>
+        </div>
+
+        <div class="form-group" show-errors>
+            <input name="pass2"
+                   class="form-control"
+                   ng-model="password2"
+                   type="password"
+                   compare-to="userData.pass"
+                   placeholder="Repetir contraseña"
+                   minlength="6"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-default form-control" type="submit">Siguiente</button>
+        </div>
+
+        <div class="form-group">
+            <p class="noaccount">¿Ya tienes cuenta?</p>
+            <a ui-sref="signin">Iniciar sesión</a>
+        </div>
+
+    </form>
+
+</div>

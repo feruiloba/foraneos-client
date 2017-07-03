@@ -1,0 +1,27 @@
+<div class="container" ng-controller="SignInCtrl">
+    <img src="vendors/images/user.svg">
+    <form name="signInForm">
+        <div class="form-group">
+            <input class="form-control" type="email" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" type="password" placeholder="Contraseña">
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success form-control" ng-click="onSubmit()">Iniciar sesión</button>
+        </div>
+
+        <div class="form-group">
+            <p class="noaccount">¿No tienes cuenta?</p>
+            <a ui-sref="register">Crear cuenta</a>
+        </div>
+
+        <div class="form-group last">
+            <a class="forgotpassword">¿Se te olvidó tu contraseña?</a><br><br><br><br>
+            <a class="terms">Términos y condiciones</a>
+            <a class="terms">Privacidad</a>
+        </div>
+    </form>
+</div>

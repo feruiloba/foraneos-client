@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="foraneos">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foráneos</title>
+
+    <script src="vendors/js/angular.min.js"></script>
+    <script src="vendors/js/lodash.min.js"></script>
+    <script src="vendors/js/angular-simple-logger.js"></script>
+    <script src="vendors/js/angular-google-maps.min.js"></script>
+    <script src="vendors/js/ui-bootstrap-tpls-1.3.3.min.js"></script>
+    <script src="vendors/js/angular-ui-router.min.js"></script>
+
+    <link rel="stylesheet" href="vendors/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/css/bootstrap-theme.min.css">
+
+
+    <script src="index.js"></script>
+    <script src="indexCtrl.js"></script>
+    <script src="address/address.js"></script>
+    <script src="register/register.js"></script>
+    <script src="signin/signin.js"></script>
+    <script src="data.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="signin/signin.css">
+    <link rel="stylesheet" href="register/register.css">
+    <link rel="stylesheet" href="address/address.css">
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAzwSu-Nvpkl0D2qBV7AoG8NObipEEmPk8",
+            authDomain: "servicios-foraneos-4683f.firebaseapp.com",
+            databaseURL: "https://servicios-foraneos-4683f.firebaseio.com",
+            projectId: "servicios-foraneos-4683f",
+            storageBucket: "servicios-foraneos-4683f.appspot.com",
+            messagingSenderId: "893434171589"
+        };
+        firebase.initializeApp(config);
+    </script>
+    
+</head>
+<body ng-controller="IndexCtrl">
+
+<div ui-view="form"></div>
+
+</body>
+</html>
