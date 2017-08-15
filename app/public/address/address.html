@@ -31,7 +31,13 @@
         </div>
 
         <div class="form-group">
-            <button class="btn btn-success form-control" type="submit">Crear cuenta</button>
+            <label><input type="checkbox" style="vertical-align: top; position: relative" ng-model="terms"></label>
+            <p class="noaccount">He leído y acepto los </p>
+            <a href="">términos y condiciones</a>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success form-control" type="submit" ng-disabled="!terms">Crear cuenta</button>
         </div>
 
         <div class="form-group">
