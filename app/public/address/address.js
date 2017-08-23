@@ -46,7 +46,7 @@ angular.module('foraneos.address', [])
     var postForaneo = function(){
         console.log(userData);
         console.log(addressData);
-        $http.post('https://foraneos-server.herokuapp.com', {foraneo:userData,direccion:addressData}).success(function(){
+        $http.post('https://foraneos-server.herokuapp.com/foraneos', {foraneo:userData,direccion:addressData}).success(function(){
             console.log('Agregado correctamente');
         });
     };
