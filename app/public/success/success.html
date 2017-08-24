@@ -1,0 +1,24 @@
+<div class="container" ng-controller="SuccessCtrl">
+
+    <div class="form-group first">
+        <span class="createaccount">Registro exitoso</span>
+    </div>
+
+    <div class="form-group">
+        <label class="help-block">Clave única: </label><p class="noaccount">{{userData.cu}}</p>
+        <label class="help-block">Carrera: </label><p class="noaccount">{{userData.carrera}}</p>
+        <label class="help-block">Estado: </label><p class="noaccount">{{userData.estado_origen}}</p>
+    </div>
+
+    <div class="form-group">
+        <p class="message">Gracias por registrarte {{userData.nombre}}!
+            Lleva este comprobante junto con tu credencial del itam a servicios escolares y recibe tu estampa de foráneo registrado
+        </p>
+    </div>
+
+    <div class="form-group">
+        <p class="noaccount">¿Ya tienes cuenta?</p>
+        <a ui-sref="signin">Iniciar sesión</a>
+    </div>
+
+</div>

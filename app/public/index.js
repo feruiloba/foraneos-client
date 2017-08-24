@@ -7,7 +7,9 @@ angular.module('foraneos', [
     'foraneos.signin',
     'foraneos.controller',
     'foraneos.register',
-    'foraneos.address'])
+    'foraneos.address',
+    'foraneos.success'
+])
 
     .config(['$stateProvider', 'uiGmapGoogleMapApiProvider', function($stateProvider, uiGmapGoogleMapApiProvider){
 
@@ -32,6 +34,12 @@ angular.module('foraneos', [
         $stateProvider.state('address', {
             views: {
                 'form' : {templateUrl: 'address/address.html'}
+            }
+        });
+
+        $stateProvider.state('success', {
+            views: {
+                'form' : {templateUrl: 'success/success.html'}
             }
         });
 

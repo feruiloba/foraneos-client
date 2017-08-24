@@ -2,7 +2,7 @@
 
 angular.module('foraneos.address', [])
 
-.controller('AddressCtrl', ['$scope', 'uiGmapGoogleMapApi', 'register', '$http', function ($scope, uiGmapGoogleMapApi, register, $http) {
+.controller('AddressCtrl', ['$scope', 'uiGmapGoogleMapApi', 'register', '$http', '$state', function ($scope, uiGmapGoogleMapApi, register, $http, $state) {
 
     var userData = register.get();
     var addressData = {};
@@ -44,11 +44,21 @@ angular.module('foraneos.address', [])
     };
 
     var postForaneo = function(){
-        console.log(userData);
-        console.log(addressData);
-        $http.post('https://foraneos-server.herokuapp.com/foraneos', {foraneo:userData,direccion:addressData}).success(function(){
+
+        var req = {
+            method: 'POST',
+            url: 'https://foraneos-server.herokuapp.com/foraneos/add',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: {foraneo:userData,direccion:addressData}
+        };
+
+        $http(req).success(function(){
             console.log('Agregado correctamente');
+            $state.go('success');
         });
+
     };
 
 
